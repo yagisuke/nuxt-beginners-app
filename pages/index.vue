@@ -1,13 +1,29 @@
 <template>
-  <div>qiitaの情報を取得しています</div>
+  <div>
+    <ul>
+      <li v-for="item in items" :key="item.id">
+        <a :href="item.url" target="_blank">
+          <b>
+            <span>{{ item.title }}</span>
+            <small>{{ item.user.id }}</small>
+          </b>
+          <p>
+            {{ item.body.slice(0, 100) }}
+          </p>
+        </a>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
 export default {
-  async mounted() {
-    console.log(
-      JSON.stringify(await this.$axios.$get('https://qiita.com/api/v2/items?query=tag:webgl'), true, '')
-    )
+  async asyncData({ app }) {
+    const items = await app.$axios.$get('https://qiita.com/api/v2/items?query=tag:webgl')
+
+    return {
+      items
+    }
   }
 }
 </script>

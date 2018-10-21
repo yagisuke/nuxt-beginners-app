@@ -1,3 +1,5 @@
+import { QIITA_TOKEN } from './config'
+
 module.exports = {
   /*
   ** Headers of the page
@@ -20,7 +22,15 @@ module.exports = {
   modules: [
     '@nuxtjs/axios'
   ],
-  axios: {},
+  axios: {
+
+  },
+  plugins: [
+    '~/plugins/axios.js'
+  ],
+  env: {
+    QIITA_TOKEN: QIITA_TOKEN
+  },
   /*
   ** Build configuration
   */
