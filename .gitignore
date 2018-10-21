@@ -9,3 +9,8 @@ npm-debug.log
 
 # Nuxt generate
 dist
+
+# config
+## git update-index --assume-unchanged config/index.js を設定しているので、解除するときは以下をやる。
+## git update-index --no-assume-unchanged config/index.js
+config
