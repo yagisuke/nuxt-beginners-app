@@ -10,6 +10,8 @@
 </template>
 
 <script>
+import Cookies from 'universal-cookie'
+
 export default {
   methods: {
     login() {
