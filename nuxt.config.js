@@ -29,7 +29,8 @@ module.exports = {
 
   },
   plugins: [
-    '~/plugins/axios.js'
+    '~/plugins/axios.js',
+    { src: '~/plugins/logger.js', ssr: false }
   ],
   env: {
     QIITA_TOKEN: QIITA_TOKEN
